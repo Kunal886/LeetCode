@@ -1,22 +1,23 @@
 class Solution {
+
     static String [] s={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+
     public List<String> letterCombinations(String digits) {
-        List<String> ll=new ArrayList<>();
-     
-        combination(digits,"",ll);
-        return ll;
+        List<String> l=new ArrayList<>();
+        combination(digits,"",l);
+        return l;
+
+
     }
-    public static void combination(String ques,String ans,List<String> ll){
-        
-        if(ques.length()==0){
-            ll.add(ans);
+    public static void combination(String digits,String ans,List<String> l){
+        if(digits.length()==0){
+            l.add(ans);
             return;
         }
-
-       char ch=ques.charAt(0);
+        char ch=digits.charAt(0);
         String str=s[ch-'0'];
 
-        for(int a=0;a<str.length();a++)
-        combination(ques.substring(1),ans+str.charAt(a),ll);
+        for(int i=0;i<str.length();i++)
+        combination(digits.substring(1),ans+str.charAt(i),l);
     }
 }
