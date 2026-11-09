@@ -1,15 +1,14 @@
 class Solution {
     public void nextPermutation(int[] nums) {
-        int n=nums.length;
-       int a=-1;
-       for(int i=n-2;i>=0;i--){
+        int a=-1;
+        for(int i=nums.length-2;i>=0;i--){
             if(nums[i]<nums[i+1]){
                 a=i;
                 break;
             }
-       }
-       if(a!=-1){
-       for(int i=n-1;i>a;i--){
+        }
+     if(a!=-1){
+       for(int i=nums.length-1;i>a;i--){
             if(nums[i]>nums[a]){
                 int temp=nums[i];
                 nums[i]=nums[a];
@@ -18,16 +17,18 @@ class Solution {
             }
        }
        }
-       reverse(nums,a+1,n-1);
+
+         rev(a+1,nums);
+
     }
-    public int[] reverse(int [] arr,int a,int b){
-        while(a<b){
-            int temp=arr[a];
-            arr[a]=arr[b];
-            arr[b]=temp;
-            a++;
-            b--;
+    public static void rev(int i,int[] nums){
+        int j=nums.length-1;
+        while(i<j){
+            int temp=nums[i];
+            nums[i]=nums[j];
+            nums[j]=temp;
+            i++;
+            j--;
         }
-        return arr;
     }
 }
