@@ -22,12 +22,14 @@ class Solution {
             temp=temp.next;
             if(temp!=null){
                 temp2.next=temp;
-                temp=temp.next;
                 temp2=temp2.next;
+                temp=temp.next;
             }
+
         }
         temp2.next=null;
         temp1.next=dummy2.next;
         return dummy1.next;
+        
     }
 }
