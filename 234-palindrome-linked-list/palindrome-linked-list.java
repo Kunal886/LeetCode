@@ -20,7 +20,7 @@ class Solution {
        int j=arr.size()-1;
        while(i<j){
 
-            if(!arr.get(i++).equals(arr.get(j--))) return false;
+            if(arr.get(i++)!=(arr.get(j--))) return false;
 
          }
        return true;
